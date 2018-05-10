@@ -28,12 +28,10 @@ class Letter {
 
         if (character === this.letter) {
 
-            console.log("CORRECT.");
             this.guess = true;
 
         } else {
 
-            console.log("INCORRECT.");
             this.guess = false;
 
         }

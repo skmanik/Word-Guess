@@ -4,7 +4,7 @@ var Word = require("./Word.js");
 var inquirer = require("inquirer");
 
 // word array
-var animals = ["dog", "pig", "horse", "snake", "tiger", "duck", "monkey"];
+var animals = ["dog", "monkey"];
 
 // game function
 function runApp() {
@@ -14,7 +14,7 @@ function runApp() {
     var guessRemain = 10;
 
     // initial display
-    guessWord.toString();
+    console.log(guessWord.toString());
 
     // initial prompt
     askQuestion();
@@ -29,10 +29,38 @@ function runApp() {
             }
         ]).then(function (inquirerResponse) {
 
-            // do something
-            var test = inquirerResponse.userInput.toLowerCase();
+            // take only one letter and make sure it's lowercased
+            var substring = inquirerResponse.userInput.substr(0, 1);
+            var formatLetter = substring.toLowerCase();
 
-            console.log(test);
+            console.log("You guessed: " + formatLetter);
+
+            // now compare with letters of word
+            guessWord.checkWord(formatLetter);
+
+            // display
+            console.log(guessWord.toString());
+
+            if (guessWord.toString().includes(formatLetter)) {
+
+                console.log("Correct! Remaining guesses: " + guessRemain);
+
+            } else {
+
+                guessRemain--; 
+                console.log("Incorrect! Remaining guesses: " + guessRemain);
+
+            }
+
+            if (guessRemain > 0) {
+
+                askQuestion();
+
+            } else {
+
+                console.log("Game over, bub.");
+
+            }
 
         });
 
