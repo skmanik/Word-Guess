@@ -26,6 +26,12 @@ class Letter {
     // letter comparison
     checkLetter(character) {
 
+        if (this.guess) {
+
+            return;
+
+        }
+
         if (character === this.letter) {
 
             this.guess = true;

@@ -12,6 +12,7 @@ function runApp() {
     var storedWord = animals[(Math.random() * animals.length) | 0];
     var guessWord = new Word(storedWord);
     var guessRemain = 10;
+    var guessedArr = [];
 
     // initial display
     console.log(guessWord.toString());
@@ -52,13 +53,21 @@ function runApp() {
 
             }
 
-            if (guessRemain > 0) {
+            if (guessRemain === 0) {
 
-                askQuestion();
+                console.log("Game over, bub. The word was: " + storedWord + ".");
 
             } else {
 
-                console.log("Game over, bub.");
+                if (guessWord.toString() === storedWord) {
+
+                    console.log("You guessed it! I'm proud of you.");
+
+                } else {
+
+                    askQuestion();
+
+                }
 
             }
 

@@ -48,8 +48,6 @@ class Word {
 
         }
 
-        console.log(array);
-
     }    
 
 }
