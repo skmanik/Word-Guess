@@ -43,18 +43,3 @@ class Letter {
 }
 
 module.exports = Letter;
-
-// var letter = new Letter("L");
-
-
-// console.log(letter + "");
-
-// letter.checkLetter("S");
-
-// console.log(letter.guess);
-
-// letter.checkLetter("L");
-
-// console.log(letter + "");
-
-// console.log(letter.guess);

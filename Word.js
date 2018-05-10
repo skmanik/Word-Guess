@@ -24,8 +24,6 @@ class Word {
     // return string representing the word
     toString() {
 
-        // console.log("TEST!");
-
         var array = this.letters;
         var string = "";
 
@@ -35,15 +33,12 @@ class Word {
 
         }
 
-        // return string;
-        console.log(string);
+        return string;
 
     }
 
-    // A function that takes a character as an argument and calls the guess function on each letter object (the second function defined in Letter.js)
+    // check entire word with checkLetter function
     checkWord(character) {
-
-        // console.log("Test Check Word!");
 
         var array = this.letters;
 
@@ -56,10 +51,5 @@ class Word {
     }    
 
 }
-
-// var word = new Word("Hello");
-
-// word.checkWord("H");
-// word.toString();
 
 module.exports = Word;
